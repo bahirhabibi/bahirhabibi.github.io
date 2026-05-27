@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belasting op Cryptovaluta | Crypto & Belastingen</title>
+  <meta name="description" content="Belasting op Cryptovaluta biedt heldere uitleg over crypto, belastingen, box 3, staking, mining, DeFi, NFT's, aangifte en regelgeving zoals DAC8 en CARF." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --light: #f8fafc;
+      --accent: #0ea5e9;
+      --accent-dark: #0369a1;
+      --border: #e5e7eb;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--light);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--bg);
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), #38bdf8);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.22), transparent 32%), linear-gradient(135deg, var(--bg), var(--bg-soft));
+      color: white;
+      padding: 110px 0 90px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #bae6fd;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.18rem;
+      color: #cbd5e1;
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 14px 30px rgba(14, 165, 233, 0.25);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: white;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .profile-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: #dbeafe;
+      font-size: 0.96rem;
+    }
+
+    .profile-card li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-title span {
+      color: var(--accent-dark);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-top: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--bg);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .quote-box {
+      background: var(--bg);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      position: sticky;
+      top: 92px;
+    }
+
+    .quote-box p {
+      color: #dbeafe;
+      font-size: 1.1rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .number {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    details + details {
+      margin-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--bg);
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 0.96rem;
+    }
+
+    .contact {
+      background: var(--bg);
+      color: white;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 1.08rem;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      padding: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 86px 0 70px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .quote-box {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#top" class="logo">
+          <span class="logo-mark">BC</span>
+          <span>Belasting op Cryptovaluta</span>
+        </a>
+        <div class="nav-links">
+          <a href="#nieuws">Nieuws</a>
+          <a href="#crypto-belastingen">Crypto & Belastingen</a>
+          <a href="#termen">Termen</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">belastingopcryptovaluta.nl · crypto, fiscaliteit en duiding</div>
+          <h1>Belasting op crypto begrijpelijk gemaakt.</h1>
+          <p>
+            Een kennisplatform over cryptovaluta en belastingen. Met praktische uitleg over box 3, mining, staking, DeFi, NFT’s, aangifteherstel en nieuwe regelgeving zoals DAC8 en CARF.
+          </p>
+          <div class="buttons">
+            <a class="button button-primary" href="#crypto-belastingen">Bekijk crypto & belastingen</a>
+            <a class="button button-secondary" href="#nieuws">Lees nieuws en commentaar</a>
+          </div>
+        </div>
+        <aside class="profile-card">
+          <h2>Waar vind je hier antwoord op?</h2>
+          <ul>
+            <li>Hoe geef je crypto op in de aangifte?</li>
+            <li>Wanneer speelt box 3 en wanneer mogelijk box 1?</li>
+            <li>Hoe ga je om met staking, mining, lending en DeFi?</li>
+            <li>Wat betekenen DAC8, CARF en MiCAR in de praktijk?</li>
+            <li>Welke gegevens heb je nodig om oude jaren te reconstrueren?</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="nieuws">
+      <div class="container">
+        <div class="section-title">
+          <span>Nieuws</span>
+          <h2>Actuele ontwikkelingen, podcasts en fiscale duiding.</h2>
+          <p>
+            Hier komt ruimte voor korte nieuwsberichten, commentaar bij podcastafleveringen, samenvattingen van ontwikkelingen en praktische duiding voor iedereen die crypto fiscaal beter wil begrijpen.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>DAC8 en automatische gegevensuitwisseling</h3>
+            <p>
+              Duiding bij nieuwe rapportageverplichtingen voor cryptodienstverleners en wat deze gegevensuitwisseling kan betekenen voor aangiftecontrole, toezicht en compliance.
+            </p>
+            <div class="tag-row">
+              <span class="tag">DAC8</span>
+              <span class="tag">CARF</span>
+              <span class="tag">Compliance</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Podcastcommentaar: crypto in box 3</h3>
+            <p>
+              Samenvatting en commentaar bij gesprekken over peildatumwaarde, walletadressen, exchanges en de praktische bewijspositie van cryptobezitters.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Box 3</span>
+              <span class="tag">Aangifte</span>
+              <span class="tag">Wallets</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Praktijkvraag: staking en lending</h3>
+            <p>
+              Uitleg over beloningen, waardemutaties, liquid staking en de vraag waarom de feitelijke voorwaarden bepalend blijven voor de fiscale beoordeling.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Staking</span>
+              <span class="tag">Lending</span>
+              <span class="tag">DeFi</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="crypto-belastingen" class="highlight">
+      <div class="container">
+        <div class="section-title">
+          <span>Crypto & Belastingen</span>
+          <h2>Van cryptotransactie naar fiscale behandeling.</h2>
+          <p>
+            Crypto is fiscaal geen standaardcategorie. De behandeling hangt af van de feiten: bezit, handel, werkzaamheden, ondernemerschap, staking, mining, DeFi, NFT’s en de administratie die beschikbaar is.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Box 3 en peildatumwaarde</h3>
+            <p>
+              Voor particuliere cryptobezitters draait het vaak om de waarde op de peildatum. De uitdaging zit vooral in het onderbouwen van die waarde, zeker bij oude jaren, meerdere exchanges of self-hosted wallets.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Box 1, resultaat of onderneming</h3>
+            <p>
+              Veel handelen of actief bezig zijn met crypto leidt niet automatisch tot box 1. Er moet worden gekeken naar werkzaamheden, voordeelverwachting, kennis, organisatie, risico en de concrete feiten.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Mining</h3>
+            <p>
+              Bij mining spelen apparatuur, elektriciteitskosten, schaal, technische inrichting en voordeelverwachting een grote rol. De fiscale kwalificatie vraagt daarom altijd om feitelijke analyse.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Staking en lending</h3>
+            <p>
+              Staking- en lendingbeloningen kunnen vragen oproepen over rendement, bezit, beschikkingsmacht en fiscale verwerking. De voorwaarden van het platform of protocol zijn daarbij belangrijk.
+            </p>
+          </article>
+          <article class="card">
+            <h3>DeFi en wallets</h3>
+            <p>
+              Bij DeFi ontbreken vaak duidelijke jaaroverzichten. Walletadressen, protocolinteracties, swaps, liquidity pools en bridge-transacties moeten dan zorgvuldig worden gereconstrueerd.
+            </p>
+          </article>
+          <article class="card">
+            <h3>NFT’s en tokens</h3>
+            <p>
+              Een NFT kan kunst, een game-item, toegangsbewijs, lidmaatschap of speculatief bezit vertegenwoordigen. De fiscale behandeling volgt uit de functie, context en feiten.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="advies">
+      <div class="container split">
+        <div class="quote-box">
+          <p>
+            “Goed crypto-belastingadvies begint niet met een conclusie, maar met overzicht: wanneer begonnen, welke wallets, welke exchanges, welke transacties en welke activiteiten?”
+          </p>
+        </div>
+        <div>
+          <div class="section-title">
+            <span>Belastingadvies</span>
+            <h2>Een praktische aanpak voor aangifte, herstel en onderbouwing.</h2>
+            <p>
+              Deze sectie kan later worden uitgebreid tot een aparte adviespagina. De kern is dat fiscale duiding pas betrouwbaar wordt wanneer de cryptoactiviteiten goed zijn geïnventariseerd en gereconstrueerd.
+            </p>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <div class="number">1</div>
+              <div>
+                <h3>Inventariseren</h3>
+                <p>Wanneer is iemand begonnen, welke exchanges zijn gebruikt, welke wallets bestaan en welke soorten activiteiten hebben plaatsgevonden?</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">2</div>
+              <div>
+                <h3>Reconstructie maken</h3>
+                <p>Maak per jaar inzichtelijk welke posities, transacties en waarden relevant zijn. Denk aan exports, walletadressen en blockchaingegevens.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">3</div>
+              <div>
+                <h3>Fiscaal kwalificeren</h3>
+                <p>Bepaal of sprake is van box 3, resultaat uit overige werkzaamheden, winst uit onderneming of een andere fiscale verwerking.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">4</div>
+              <div>
+                <h3>Onderbouwen en verwerken</h3>
+                <p>Leg keuzes vast, corrigeer waar nodig eerdere aangiften en zorg dat de fiscale positie uitlegbaar en verdedigbaar is.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="termen" class="highlight">
+      <div class="container grid-2">
+        <div class="section-title">
+          <span>Termen</span>
+          <h2>Uitleg van veelgebruikte cryptobegrippen.</h2>
+          <p>
+            Een begrippenlijst voor termen die vaak terugkomen bij crypto en belastingen. Deze lijst kan later worden uitgebreid met losse pagina’s per begrip.
+          </p>
+        </div>
+        <div>
+          <details open>
+            <summary>Wallet</summary>
+            <p>Een digitale omgeving waarmee crypto kan worden ontvangen, bewaard of verstuurd. Bij een self-hosted wallet beheert de gebruiker zelf de private keys.</p>
+          </details>
+          <details>
+            <summary>Exchange</summary>
+            <p>Een handelsplatform waarop crypto kan worden gekocht, verkocht of omgewisseld. Voor fiscale reconstructie zijn exports en jaaroverzichten van exchanges vaak belangrijk.</p>
+          </details>
+          <details>
+            <summary>Staking</summary>
+            <p>Het inzetten of vastzetten van crypto om een netwerk te ondersteunen of rendement te ontvangen. De fiscale beoordeling hangt af van de concrete voorwaarden.</p>
+          </details>
+          <details>
+            <summary>DeFi</summary>
+            <p>Decentralized finance: financiële toepassingen op de blockchain, zoals lending, borrowing, decentralized exchanges en liquidity pools.</p>
+          </details>
+          <details>
+            <summary>DAC8</summary>
+            <p>Een Europese richtlijn waarmee automatische informatie-uitwisseling wordt uitgebreid naar cryptoactiviteiten bij rapporterende cryptodienstverleners.</p>
+          </details>
+          <details>
+            <summary>CARF</summary>
+            <p>Het Crypto-Asset Reporting Framework van de OESO. Dit raamwerk ziet op internationale uitwisseling van informatie over cryptoactiva.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title" style="margin-left:auto;margin-right:auto;">
+          <span>Contact</span>
+          <h2>Vragen over crypto en belastingen?</h2>
+        </div>
+        <p>
+          Neem contact op voor vragen over crypto, aangifte, fiscale reconstructie, regelgeving of kennisdeling. Voor GitHub Pages is een mailto-link de eenvoudigste oplossing zonder backend.
+        </p>
+        <div class="buttons" style="justify-content:center;">
+          <a class="button button-primary" href="mailto:info@belastingopcryptovaluta.nl">Stuur een e-mail</a>
+          <a class="button button-secondary" href="#nieuws">Bekijk nieuws</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Belasting op Cryptovaluta · belastingopcryptovaluta.nl</span>
+      <span>Crypto · Fiscaliteit · Compliance · Duiding</span>
+    </div>
+  </footer>
+</body>
+</html>
